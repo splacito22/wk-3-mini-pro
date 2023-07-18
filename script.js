@@ -1,13 +1,20 @@
-var gon = {
-  choices: ["r", "p", "s"],
-};
+var wins = 0;
+var losses = 0;
+var ties = 0;
 
-var choice = prompt("Select one of the following choices: r, p ,s");
+var options = ["R", "P", "S"];
+function playGame() {
+  var userChoice = window.prompt("Enter R, P, or S:");
 
-alert();
+  if (!userChoice) {
+    console.log("Game ended.");
+    return;
+  }
 
-function game() {
-  prompt("Select one of the following choices: r, p ,s");
+  userChoice = userChoice.toUpperCase();
+  var computerChoice = options[Math.floor(Math.random() * options.length)];
+
+  window.alert("The computer chose " + computerChoice);
 }
 
-game();
+playGame();
